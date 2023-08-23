@@ -114,7 +114,8 @@ public class App
 //			System.out.println(cachedData.toString());
 //		}
 		Results results = query.execute();
-//		System.out.println(results.size());
+		System.out.println(results.size());
+
 
 		for (Result element : results.all()) {
 			System.out.println(element.getValue());
