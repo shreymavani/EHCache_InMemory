@@ -7,7 +7,7 @@ import org.example.model.CompositeKey;
 
 public class CompositeKeyExtractor implements AttributeExtractor {
 
-    @Override public Object attributeFor(Element element, String attributeName) throws AttributeExtractorException {
+    @Override public String attributeFor(Element element, String attributeName) throws AttributeExtractorException {
         CompositeKey compositeKey = (CompositeKey) element.getObjectValue();
 
         // Return the appropriate attribute based on attributeName

@@ -1,6 +1,7 @@
 package org.example.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class CompositeKey implements Serializable {
     private String applicationId;
@@ -40,9 +41,6 @@ public class CompositeKey implements Serializable {
 
     @Override
     public int hashCode() {
-        int result = applicationId.hashCode();
-        result = 31 * result + clusterId.hashCode();
-        result = 31 * result + engineType.hashCode();
-        return result;
+        return Objects.hash(applicationId, clusterId, engineType);
     }
 }

@@ -2,6 +2,7 @@ package org.example;
 
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
+import net.sf.ehcache.Element;
 import net.sf.ehcache.search.Attribute;
 import net.sf.ehcache.search.Query;
 import net.sf.ehcache.search.Result;
@@ -100,18 +101,24 @@ public class App
 
 		System.out.println(rtComp.getSize());
 
-//		Query query = rtComp.createQuery()
-//				.includeKeys()
-//				.addCriteria(applicationId.eq("09687"))
-//				.addCriteria(new Attribute("clusterId").eq("123456"))
-//				.addCriteria(new Attribute("engineType").eq("Spark")).end();
-//
-//		Results results = query.execute();
-//
-//
-//				for (Result element : results.all()) {
-//					System.out.println(element.toString());
-//				}
+		Query query = rtComp.createQuery()
+				.includeKeys().includeValues()
+				.addCriteria(new Attribute("applicationId").eq("09687"))
+				.addCriteria(new Attribute("clusterId").eq("123456"))
+				.addCriteria(new Attribute("engineType").eq("Spark"));
+
+//		Element cachedElement = rtComp.get(cp);
+//		if (cachedElement != null) {
+//			Object cachedData = cachedElement.getObjectValue();
+//			// Process the cachedData as needed
+//			System.out.println(cachedData.toString());
+//		}
+		Results results = query.execute();
+//		System.out.println(results.size());
+
+		for (Result element : results.all()) {
+			System.out.println(element.getValue());
+		}
 		
 		((AbstractApplicationContext) context).close();
 	}

@@ -28,9 +28,9 @@
 <!--		searchable="true"> &lt;!&ndash; Enable searchable &ndash;&gt;-->
 
 		<searchable>
-			<searchAttribute name="applicationId" class="org.example.keyExtractor.CompositeKeyExtractor"/>
-			<searchAttribute name="clusterId" class="org.example.keyExtractor.CompositeKeyExtractor"/>
-			<searchAttribute name="engineType" class="org.example.keyExtractor.CompositeKeyExtractor"/>
+			<searchAttribute name="applicationId" expression="key.getApplicationId()"/>
+			<searchAttribute name="clusterId" expression="key.getClusterId()"/>
+			<searchAttribute name="engineType" expression="key.getEngineType()"/>
 		</searchable>
 	</cache>
 
