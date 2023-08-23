@@ -25,25 +25,25 @@ public class App
 		AbstractApplicationContext context = new AnnotationConfigApplicationContext(
 				AppConfig.class);
 
-		ProductService service = (ProductService) context.getBean("productService");
-		DirectService service1 = (DirectService) context.getBean("rtDataService");
+//		ProductService service = (ProductService) context.getBean("productService");
+//		DirectService service1 = (DirectService) context.getBean("rtDataService");
 		CompositeKeyService service2 = (CompositeKeyService) context.getBean("rtCompService");
 
-		System.out.println("LED TV ->" + service.getByName("LED TV"));
-		System.out.println("LED TV ->" + service.getByName("LED TV"));
-		System.out.println("LED TV ->" + service.getByName("LED TV"));
-
-		System.out.println("Phone ->" + service.getByName("Phone"));
-		System.out.println("Phone ->" + service.getByName("Phone"));
-		System.out.println("Phone ->" + service.getByName("Phone"));
-
-		System.out.println("Application ID ->" + service1.getById("Spark"));
-		System.out.println("Application ID ->" + service1.getById("Spark"));
-		System.out.println("Application ID ->" + service1.getById("Spark"));
+//		System.out.println("LED TV ->" + service.getByName("LED TV"));
+//		System.out.println("LED TV ->" + service.getByName("LED TV"));
+//		System.out.println("LED TV ->" + service.getByName("LED TV"));
 //
-		System.out.println("Application ID ->" + service1.getById("Hive"));
-		System.out.println("Application ID ->" + service1.getById("Hive"));
-		System.out.println("Application ID ->" + service1.getById("Hive"));
+//		System.out.println("Phone ->" + service.getByName("Phone"));
+//		System.out.println("Phone ->" + service.getByName("Phone"));
+//		System.out.println("Phone ->" + service.getByName("Phone"));
+//
+//		System.out.println("Application ID ->" + service1.getById("Spark"));
+//		System.out.println("Application ID ->" + service1.getById("Spark"));
+//		System.out.println("Application ID ->" + service1.getById("Spark"));
+////
+//		System.out.println("Application ID ->" + service1.getById("Hive"));
+//		System.out.println("Application ID ->" + service1.getById("Hive"));
+//		System.out.println("Application ID ->" + service1.getById("Hive"));
 
 		CompositeKey cp = new CompositeKey("09687","123456","Spark");
 		CompositeKey cp1 = new CompositeKey("09687","123456","Hive");
@@ -56,19 +56,19 @@ public class App
 		System.out.println("Application ID ->" + service2.getById(cp1));
 		System.out.println("Application ID ->" + service2.getById(cp1));
 
-		Product product = new Product("Fridge", 550);
-		RTData rtData= new RTData("89677_5678", "I am Lord Yarn");
-		service.updateProduct(product);
-		service1.updateData("Spark","I am Lord Yarn");
+//		Product product = new Product("Fridge", 550);
+//		RTData rtData= new RTData("89677_5678", "I am Lord Yarn");
+//		service.updateProduct(product);
+//		service1.updateData("Spark","I am Lord Yarn");
 		service2.updateData(cp,"I am Lord Yarn Composite");
 
-		System.out.println("LED TV ->" + service.getByName("LED TV"));
-		System.out.println("LED TV ->" + service.getByName("LED TV"));
-		System.out.println("LED TV ->" + service.getByName("LED TV"));
-
-		System.out.println("Application ID ->" + service1.getById("Spark"));
-		System.out.println("Application ID ->" + service1.getById("Spark"));
-		System.out.println("Application ID ->" + service1.getById("Spark"));
+//		System.out.println("LED TV ->" + service.getByName("LED TV"));
+//		System.out.println("LED TV ->" + service.getByName("LED TV"));
+//		System.out.println("LED TV ->" + service.getByName("LED TV"));
+//
+//		System.out.println("Application ID ->" + service1.getById("Spark"));
+//		System.out.println("Application ID ->" + service1.getById("Spark"));
+//		System.out.println("Application ID ->" + service1.getById("Spark"));
 
 		System.out.println("Application ID ->" + service2.getById(cp));
 		System.out.println("Application ID ->" + service2.getById(cp));
@@ -76,17 +76,17 @@ public class App
 
 		System.out.println("Refreshing all products");
 
-		service.refreshAllProducts();
-		service1.refreshAllDatas();
+//		service.refreshAllProducts();
+//		service1.refreshAllDatas();
 		service2.refreshAllDatas();
 
-		System.out.println("LED TV [after refresh]->" + service.getByName("LED TV"));
-		System.out.println("LED TV [after refresh]->" + service.getByName("LED TV"));
-		System.out.println("LED TV [after refresh]->" + service.getByName("LED TV"));
-
-		System.out.println("Application ID ->" + service1.getById("Spark"));
-		System.out.println("Application ID ->" + service1.getById("Spark"));
-		System.out.println("Application ID ->" + service1.getById("Spark"));
+//		System.out.println("LED TV [after refresh]->" + service.getByName("LED TV"));
+//		System.out.println("LED TV [after refresh]->" + service.getByName("LED TV"));
+//		System.out.println("LED TV [after refresh]->" + service.getByName("LED TV"));
+//
+//		System.out.println("Application ID ->" + service1.getById("Spark"));
+//		System.out.println("Application ID ->" + service1.getById("Spark"));
+//		System.out.println("Application ID ->" + service1.getById("Spark"));
 
 		System.out.println("Application ID ->" + service2.getById(cp));
 		System.out.println("Application ID ->" + service2.getById(cp));
