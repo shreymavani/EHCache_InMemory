@@ -1,0 +1,37 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd"
+	updateCheck="false"
+	monitoring="autodetect"
+	dynamicConfig="true">
+
+	<cache name="products"
+		maxEntriesLocalHeap="100"
+		eternal="false"
+		timeToIdleSeconds="300"
+		timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU" />
+
+	<cache name="rtDatas"
+		maxEntriesLocalHeap="100"
+		maxEntriesLocalDisk="1000"
+		eternal="false"
+		timeToIdleSeconds="300"
+		timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU"/>
+
+	<cache name="rtCompCache"
+		maxEntriesLocalHeap="100"
+		eternal="false"
+		timeToIdleSeconds="300"
+		timeToLiveSeconds="600"
+		memoryStoreEvictionPolicy="LFU">
+<!--		searchable="true"> &lt;!&ndash; Enable searchable &ndash;&gt;-->
+
+		<searchable>
+			<searchAttribute name="applicationId" class="org.example.keyExtractor.CompositeKeyExtractor"/>
+			<searchAttribute name="clusterId" class="org.example.keyExtractor.CompositeKeyExtractor"/>
+			<searchAttribute name="engineType" class="org.example.keyExtractor.CompositeKeyExtractor"/>
+		</searchable>
+	</cache>
+
+</ehcache>
