@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service("rtCompService")
 public class CompositeKeyServiceImpl implements CompositeKeyService{
-    private static HashMap<CompositeKey, String> rtComp = new HashMap<>();
+    private static HashMap<CompositeKey, String> rtComp = new HashMap<>();              //Dummy DataBase
 
     static
     {

@@ -5,6 +5,9 @@ import net.sf.ehcache.search.attribute.AttributeExtractor;
 import net.sf.ehcache.search.attribute.AttributeExtractorException;
 import org.example.model.CompositeKey;
 
+//Facing Casting Error from string to CompositeKey,Can be Resolved
+//Alternative to this is to directly provide with the expression in ehcache.xml
+
 public class CompositeKeyExtractor implements AttributeExtractor {
 
     @Override public String attributeFor(Element element, String attributeName) throws AttributeExtractorException {

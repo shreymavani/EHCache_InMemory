@@ -4,21 +4,6 @@
 	monitoring="autodetect"
 	dynamicConfig="true">
 
-	<cache name="products"
-		maxEntriesLocalHeap="100"
-		eternal="false"
-		timeToIdleSeconds="300"
-		timeToLiveSeconds="600"
-		memoryStoreEvictionPolicy="LFU" />
-
-	<cache name="rtDatas"
-		maxEntriesLocalHeap="100"
-		maxEntriesLocalDisk="1000"
-		eternal="false"
-		timeToIdleSeconds="300"
-		timeToLiveSeconds="600"
-		memoryStoreEvictionPolicy="LFU"/>
-
 	<cache name="rtCompCache"
 		maxEntriesLocalHeap="100"
 		eternal="false"
